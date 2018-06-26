@@ -1,0 +1,36 @@
+KOA好用：
+1.数据
+2.cookie、session
+3.模板
+
+------------------------------------------------------------------------------------------------
+
+get数据：ctx.request.query
+post数据：koa-better-body
+          koa-convert
+  app.use(convert(body({
+    uploadDir: './upload/', //目录
+    keepExtensions: true  //保持拓展名
+  })))
+
+  app.use(async ctx => {
+    console.log(ctx.request.fields) // 数据(包括文件)
+  })
+
+------------------------------------------------------------------------------------------------
+
+koa-convert
+
+------------------------------------------------------------------------------------------------
+
+cookie
+
+------------------------------------------------------------------------------------------------
+
+koa的cookie无需插件：
+ctx.cookies.set(key, value, options)
+  options: maxAge, signed => app.keys
+ctx.cookies.get(key, options)
+  options: signed
+
+
